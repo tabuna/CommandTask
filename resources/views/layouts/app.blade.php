@@ -17,22 +17,25 @@
             <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse" data-target=".navbar-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a href="{{ url('/') }}"class="navbar-brand v-center"><i class="fa fa-instagram fa-2x m-r-md"></i> <span class="h4">Instagram</span></a>
+            <a href="{{ url('/') }}"class="navbar-brand v-center m-t-xs"><i class="fa fa-instagram fa-2x m-r-md"></i> <span class="h4">Instagram</span></a>
         </div>
         <div class="collapse navbar-collapse">
+
+
 
 
 
             <form class="navbar-form navbar-form-sm navbar-left" role="search">
                 <div class="form-group">
                     <div class="input-group">
-                        <input type="text" class="form-control input-sm b-dark padder rounded" placeholder="Search projects...">
+                        <input type="text" class="form-control input-sm bg-light no-border rounded padder" placeholder="Search projects...">
               <span class="input-group-btn">
-                <button type="submit" class="btn btn-sm bg-white b-dark rounded"><i class="fa fa-search"></i></button>
+                <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
               </span>
                     </div>
                 </div>
             </form>
+
 
 
             <!-- Right Side Of Navbar -->
@@ -51,6 +54,15 @@
                     <li><a href="#"><i class="icon-heart text-lg"></i></a></li>
 
                     <li><a href="#"><i class="icon-user text-lg"></i></a></li>
+
+
+                    <li>
+                        <a href="#">
+                            <i class="icon-bell text-lg"></i>
+                            <span class="badge badge-sm up bg-danger pull-right-xs">2</span>
+                        </a>
+                    </li>
+
 
 
                 {{--
