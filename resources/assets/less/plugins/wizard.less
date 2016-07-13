@@ -1,0 +1,31 @@
+
+.stepwizard-step {
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  p {
+    margin-top: 10px;
+  }
+  button[disabled] {
+    filter: alpha(opacity=100) !important;
+    opacity: 1 !important;
+  }
+}
+.stepwizard-row {
+  display: table-row;
+  &:before {
+    background-color: #cccccc;
+    bottom: 0;
+    content: " ";
+    height: 1px;
+    position: absolute;
+    top: 14px;
+    width: 100%;
+    z-order: 0;
+  }
+}
+.stepwizard {
+  display: table;
+  position: relative;
+  width: 100%;
+}

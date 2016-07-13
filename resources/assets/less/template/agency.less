@@ -1,0 +1,109 @@
+.agency{
+
+  .bg-dark {
+    background-color: #0a121e;
+  }
+
+
+  .navbar-scroll:not(.top-nav-collapse) .navbar-nav > li > a{
+    color: #fff;
+    transition: all ease-in-out 300ms;
+    border-bottom: 1px solid transparent;
+
+    &:hover,&:focus{
+      background-color: inherit;
+      border-color: #fff;
+    }
+  }
+
+
+  .container-header {
+
+    background: url("/img/agency/header.png") #0a121e no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+    .hero {
+      font-weight: 300;
+      text-transform: uppercase;
+      line-height: 1.2;
+      font-size: 5vw;
+      width: 100%;
+      :last-child {
+        margin-left: 10vw;
+      }
+    }
+
+    img{
+      object-fit: cover;
+    }
+
+  }
+
+
+
+  /*
+ * Разрез
+*/
+
+  .triangleWrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 20em;
+  }
+  .triangle, .triangle img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .triangle {
+    overflow: hidden;
+    position: absolute;
+    transform: skewX(-25deg);
+    transform-origin: 0% 100%;
+  }
+
+
+  .triangle img, .triangle:after {
+    transform: skewX(25deg);
+    transform-origin: inherit;
+  }
+
+
+  .panel-hover-2{
+    a {
+      transition: 320ms;
+      overflow: hidden;
+      &:hover {
+        transition-timing-function: linear;
+        transition-duration: 320ms;
+        text-decoration: none;
+        border-radius: 0;
+        background-color: @brand-danger;
+        box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.05);
+        color: #fff;
+      }
+    }
+    .panel-hover-icon{
+      background-color: @brand-danger;
+      transform: skewX(-25deg);
+      top: 0;
+      left: 0;
+      padding: 1vw 4vw 8vw  2vw;
+      margin-left: -2em;
+      font-size: 2em;
+        i{
+          transform: skewX(25deg);
+        }
+    }
+    i{
+      color: #fff;
+    }
+
+
+  }
+
+
+
+}

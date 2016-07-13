@@ -1,0 +1,205 @@
+
+.grid {
+  list-style: none;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  figure {
+    background: @brand-primary;
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    img {
+      display: block;
+      max-width: 100%;;
+      min-height: 100%;;
+      opacity: 0.8;
+      position: relative;
+    }
+    figcaption {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      color: #ffffff;
+      font-size: 1.25em;
+      height: 100%;;
+      left: 0;
+      padding: 2em 1.5em;
+      position: absolute;
+      text-transform: uppercase;
+      top: 0;
+      width: 100%;;
+      &::before {
+        pointer-events: none;
+      }
+      &::after {
+        pointer-events: none;
+      }
+    }
+    figcaption>a {
+      font-size: 0;
+      height: 100%;;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      text-indent: 200%;
+      top: 0;
+      white-space: nowrap;
+      width: 100%;;
+      z-index: 1000;
+    }
+    h2 {
+      font-weight: 300;
+      margin: 0;
+      word-spacing: -0.15em;
+      span {
+        font-weight: 800;
+      }
+    }
+    p {
+      font-size: 68.5%;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+/* Individual effects */
+
+/*---------------*/
+/***** Lily *****/
+/*---------------*/
+
+figure.effect-lily {
+  img {
+    -webkit-transform: translate3d(-40px,0, 0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    max-width: none;
+    opacity: 0.7;
+    transform: translate3d(-40px,0,0);
+    transition: opacity 0.35s, transform 0.35s;
+    width: -webkit-calc(100% + 50px);
+    width: calc(100% + 50px);
+  }
+  figcaption {
+    text-align: left;
+  }
+  figcaption>div {
+    bottom: 0;
+    height: 50%;
+    left: 0;
+    padding: 2em;
+    position: absolute;
+    width: 100%;
+  }
+  h2 {
+    -webkit-transform: translate3d(0,40px,0);
+    -webkit-transition: -webkit-transform 0.35s;
+    transform: translate3d(0,40px,0);
+    transition: transform 0.35s;
+  }
+  p {
+    -webkit-transform: translate3d(0,40px,0);
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
+    color: rgba(255,255,255,0.8);
+    opacity: 0;
+    transform: translate3d(0,40px,0);
+    transition: opacity 0.2s, transform 0.35s;
+  }
+  &:hover {
+    img {
+      -webkit-transform: translate3d(0,0,0);
+      opacity: 1;
+      transform: translate3d(0,0,0);
+    }
+    p {
+      -webkit-transform: translate3d(0,0,0);
+      -webkit-transition-delay: 0.05s;
+      -webkit-transition-duration: 0.35s;
+      opacity: 1;
+      transform: translate3d(0,0,0);
+      transition-delay: 0.05s;
+      transition-duration: 0.35s;
+    }
+    h2 {
+      -webkit-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+    }
+  }
+}
+
+/*---------------*/
+/***** Sadie *****/
+/*---------------*/
+
+
+
+figure.effect-sadie {
+  figcaption {
+    &::before {
+      -webkit-transform: translate3d(0,50%,0);
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      background: -webkit-linear-gradient(top, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+      background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      transform: translate3d(0,50%,0);
+      transition: opacity 0.35s, transform 0.35s;
+      width: 100%;
+    }
+  }
+  h2 {
+    -webkit-transform: translate3d(0,-50%,0);
+    -webkit-transition: -webkit-transform 0.35s, color 0.35s;
+    color: #484c61;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0,-50%,0);
+    transition: transform 0.35s, color 0.35s;
+    width: 100%;
+  }
+  p {
+    -webkit-transform: translate3d(0,10px,0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    padding: 2em 1.5em;
+    position: absolute;
+    transform: translate3d(0,10px,0);
+    transition: opacity 0.35s, transform 0.35s;
+    width: 100%;
+  }
+  &:hover {
+    h2 {
+      -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+      color: #ffffff;
+      transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+    }
+    figcaption {
+      &::before {
+        -webkit-transform: translate3d(0,0,0);
+        opacity: 1;
+        transform: translate3d(0,0,0);
+      }
+    }
+    p {
+      -webkit-transform: translate3d(0,0,0);
+      opacity: 1;
+      transform: translate3d(0,0,0);
+    }
+  }
+}
