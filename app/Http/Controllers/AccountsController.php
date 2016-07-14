@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 use App\Http\Requests\AccountEdit;
 use App\Http\Requests;
+use Session;
 
 class AccountsController extends Controller
 {
@@ -45,6 +46,30 @@ class AccountsController extends Controller
             ->save();
         return redirect()->back()->with('success','ok');
     }
+
+
+    /**
+     * Смена пароля пользователя
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getPassword(){
+        return view('accounts.password',[
+            'user' => $this->user
+        ]);
+    }
+
+    /**
+     * Обновление пароля пользователя
+     * @param AccountEdit $accountEdit
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function putPassword(AccountEdit $accountEdit){
+        $user = $this->user;
+        $user->password = bcrypt($accountEdit->password);
+        $user->save();
+        return redirect()->back()->with('success','Вы успешно сменили пароль');
+    }
+
 
 
 

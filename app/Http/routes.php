@@ -20,7 +20,9 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::controller('accounts','AccountsController',[
         'getEdit' => 'account.edit',
-        'putUpdate' => 'account.update'
+        'getPassword' => 'account.password',
+        'putUpdate' => 'account.update',
+        'putPassword' => 'account.update.password',
 ]);
 
 

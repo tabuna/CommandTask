@@ -31,16 +31,16 @@ class AccountEdit extends Request
         $user = Auth::user();
 
         return [
-            'name' => 'required|max:255',
-            'nickname'=> 'required|max:255|unique:users,nickname,'.$user->nickname,
-            'email' => 'email|required|unique:users,email,'. $user->id,
+            'name' => 'sometimes|required|max:255',
+            'nickname'=> 'sometimes|required|max:255|unique:users,nickname,'.$user->nickname,
+            'email' => 'sometimes|email|required|unique:users,email,'. $user->id,
             'password' => 'sometimes|confirmed|min:6|max:255',
             'avatar' => 'mimes:jpeg,bmp,png|sometimes',
-            'website' => 'active_url|max:255',
-            'about' => 'max:65000',
-            'notification' => 'boolean',
-            'sex' => 'boolean',
-            'phone' => 'max:255'
+            'website' => 'sometimes|active_url|max:255',
+            'about' => 'sometimes|max:65000',
+            'notification' => 'sometimes|boolean',
+            'sex' => 'sometimes|boolean',
+            'phone' => 'sometimes|max:255'
         ];
     }
 }
