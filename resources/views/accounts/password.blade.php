@@ -73,7 +73,7 @@
                     <div class="wrapper-md">
 
 
-                        <form class="form-horizontal" action="{{route('account.update')}}" method="POST">
+                        <form class="form-horizontal" action="{{route('account.update.password')}}" method="POST">
 
 
                             <a href="" class="thumb-lg pull-left m-r-md">
@@ -107,12 +107,12 @@
                             @endif
 
 
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Old Password</label>
-                                <div class="col-sm-9">
-                                    <input type="password" name="old_password" class="form-control" placeholder="***">
+                            @if(Session::has('success'))
+                                <div class="alert alert-success">
+                                    {{Session::get('success')}}
                                 </div>
-                            </div>
+                            @endif
+
 
 
                             <div class="form-group">

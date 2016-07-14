@@ -59,17 +59,13 @@ class AccountsController extends Controller
     /**
      * Обновление пароля пользователя
      * @param AccountEdit $accountEdit
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function putPassword(AccountEdit $accountEdit){
         $user = $this->user;
-        if($user->password === bcrypt($accountEdit->old_password)) {
-            $user->password = bcrypt($accountEdit->password);
-            $user->save();
-            return redirect()->back()->with('success','');
-        }else
-        {
-            return redirect()->back()->with('success','');
-        }
+        $user->password = bcrypt($accountEdit->password);
+        $user->save();
+        return redirect()->back()->with('success','Вы успешно сменили пароль');
     }
 
 

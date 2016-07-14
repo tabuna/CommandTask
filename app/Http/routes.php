@@ -21,7 +21,8 @@ Route::get('/home', 'HomeController@index');
 Route::controller('accounts','AccountsController',[
         'getEdit' => 'account.edit',
         'getPassword' => 'account.password',
-        'putUpdate' => 'account.update'
+        'putUpdate' => 'account.update',
+        'putPassword' => 'account.update.password',
 ]);
 
 
