@@ -306,7 +306,7 @@
                 <div class="wrapper-md">
 
 
-                            <form class="form-horizontal" action="{{route('account.update')}}" method="POST">
+                            <form class="form-horizontal" action="{{route('account.update')}}" enctype="multipart/form-data" method="POST">
 
 
 
@@ -315,12 +315,21 @@
 
 
 
-                                <a href="" class="thumb-lg pull-left m-r-md">
-                                    <img src="http://flatfull.com/themes/angulr/html/img/a0.jpg" class="img-circle">
-                                </a>
+                                <div class="fileinput fileinput-exists" data-provides="fileinput">
+
+                                    <div class="btn-file">
+                                        <div class="fileinput-preview  thumb-lg pull-left m-r-md">
+                                            <img src="{{$user->avatar or 'http://flatfull.com/themes/angulr/html/img/a0.jpg' }}" alt="..."  class="img-circle">
+                                        </div>
+
+                                        <input type="file" name="avatar">
+                                    </div>
+
+                                </div>
+
                                 <div class="clear m-b">
                                     <div class="m-b m-t-sm">
-                                        <span class="h3 text-black">John.Smith</span>
+                                        <span class="h3 text-black">{{$user->name}}</span>
                                         <small class="m-l">London, UK</small>
                                     </div>
                                     <p class="m-b">
