@@ -32,7 +32,7 @@ class AccountEdit extends Request
 
         return [
             'name' => 'sometimes|required|max:255',
-            'nickname'=> 'sometimes|required|max:255|unique:users,nickname,'.$user->nickname,
+            'nickname'=> 'sometimes|required|max:255|unique:users,nickname,'.$user->id,
             'email' => 'sometimes|email|required|unique:users,email,'. $user->id,
             'password' => 'sometimes|confirmed|min:6|max:255',
             'avatar' => 'mimes:jpeg,bmp,png|sometimes',
