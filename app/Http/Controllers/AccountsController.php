@@ -31,6 +31,7 @@ class AccountsController extends Controller
         return view('accounts.edit',[
             'user' => $this->user
         ]);
+
     }
 
 
@@ -42,6 +43,7 @@ class AccountsController extends Controller
         $this->user
             ->fill($accountEdit->all())
             ->save();
+        return redirect()->back()->with('success','ok');
     }
 
 
