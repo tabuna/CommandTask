@@ -28,11 +28,12 @@ class AccountEdit extends Request
      */
     public function rules()
     {
+        $user = Auth::user();
 
         return [
             'name' => 'required|max:255',
-            'nickname'=> 'required|unique:users|max:255',
-            'email' => 'email|required|unique:users,email,'. Auth::user()->id,
+            'nickname'=> 'required|max:255|unique:users,nickname,'.$user->nickname,
+            'email' => 'email|required|unique:users,email,'. $user->id,
             'password' => 'sometimes|confirmed|min:6|max:255',
             'avatar' => 'mimes:jpeg,bmp,png|sometimes',
             'website' => 'active_url|max:255',
