@@ -17,7 +17,8 @@
             <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse" data-target=".navbar-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a href="{{ url('/') }}"class="navbar-brand v-center m-t-xs"><i class="fa fa-instagram fa-2x m-r-md"></i> <span class="h4">Instagram</span></a>
+            <a href="{{ url('/') }}" class="navbar-brand v-center m-t-xs"><i class="icon-notebook fa-2x m-r-md"></i>
+                <span class="h4">Team Work</span></a>
         </div>
         <div class="collapse navbar-collapse">
 
@@ -53,7 +54,7 @@
 
                     <li><a href="#"><i class="icon-heart text-lg"></i></a></li>
 
-                    <li><a href="#"><i class="icon-user text-lg"></i></a></li>
+                    <li><a href="{{route('account.edit')}}"><i class="icon-user text-lg"></i></a></li>
 
 
                     <li>
