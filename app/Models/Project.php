@@ -28,7 +28,7 @@ class Project extends Model
      */
     public function credentials()
     {
-        return $this->hasMany('App\Credential', 'project_id');
+        return $this->hasMany(Credential::class, 'project_id');
     }
 
     /**
@@ -36,7 +36,7 @@ class Project extends Model
      */
     public function members()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany(User::class);
     }
 
     /**
@@ -44,16 +44,10 @@ class Project extends Model
      */
     public function client()
     {
-        return $this->belongsTo('App\Client');
+        return $this->belongsTo(User::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function uploads()
-    {
-        return $this->hasMany('App\Upload', 'project_id');
-    }
+
 
     /**
      * Checks if teh currently Auth user
@@ -99,6 +93,6 @@ class Project extends Model
      */
     public function tasks()
     {
-        return $this->hasMany('App\Task', 'project_id');
+        return $this->hasMany(Task::class, 'project_id');
     }
 }

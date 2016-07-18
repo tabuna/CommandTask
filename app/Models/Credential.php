@@ -17,5 +17,11 @@ class Credential extends Model
         'port'
     ];
 
-    protected $hidden = ['created_at', 'updated_at'];
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function author()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

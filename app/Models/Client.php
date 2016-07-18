@@ -20,15 +20,25 @@ class Client extends Model
         'user_id',
         'name',
         'phone_number',
-        'point_of_contact',
+        'contact',
         'email'
     ];
 
     /**
-     * Return the related projects for a given client
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function projects()
     {
-        return $this->hasMany('App\Project', 'client_id');
+        return $this->hasMany(Project::class, 'client_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function author()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
 }

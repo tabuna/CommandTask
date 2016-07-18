@@ -21,10 +21,10 @@ class Task extends Model
     ];
 
     /**
-     * Relationship to project
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function project()
     {
-        return $this->belongsTo('App\Project', 'project_id');
+        return $this->belongsTo(Project::class, 'project_id');
     }
 }
