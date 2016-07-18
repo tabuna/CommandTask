@@ -41,10 +41,14 @@ class AccountsController extends Controller
      * @param AccountEdit $accountEdit
      */
     public function putUpdate(AccountEdit $accountEdit){
+        /*if ($accountEdit->hasFile('avatar')) {
+            $accountEdit->file('avatar')->move('upload/'.time().'.'.$accountEdit->file('avatar')->getClientOriginalExtension());
+            $this->user->avatar = '/upload/'.time().'.'.$accountEdit->file('avatar')->getClientOriginalExtension();
+        }*/
         $this->user
             ->fill($accountEdit->all())
             ->save();
-        return redirect()->back()->with('success','ok');
+        return redirect()->back()->with('success','Изменения успешно сохранены');
     }
 
 
