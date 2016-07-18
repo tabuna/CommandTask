@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'robot@octavian48.ru', 'name' => 'Team Work'],
 
     /*
     |--------------------------------------------------------------------------

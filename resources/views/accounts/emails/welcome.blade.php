@@ -221,7 +221,7 @@ Responsive Email Template by @keenthemes
                                             <font face="Arial, Helvetica, sans-serif" size="5" color="#57697e"
                                                   style="font-size: 34px;">
 					<span style="font-family: Arial, Helvetica, sans-serif; font-size: 34px; color: #57697e;">
-						Awesome User Expierence
+						Awesome User Expierence {{$user->name}}
 					</span></font>
                                         </div>
                                         <!-- padding -->
