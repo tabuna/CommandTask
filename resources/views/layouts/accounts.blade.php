@@ -270,13 +270,6 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="{{url('auth/logout')}}">
-                                    <i class="icon-logout"></i>
-                                    <span>Выйти</span>
-                                </a>
-                            </li>
-
 
                         </ul>
 
@@ -303,6 +296,32 @@
 
                         </ul>
 
+
+                        <ul class="nav">
+
+                            <li class="hidden-folded text-danger padder m-t m-b-sm text-xs">
+                                <span class="text-info">Управление</span>
+                            </li>
+
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon-info"></i>
+                                    <span>Помощь</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{url('/logout')}}">
+                                    <i class="icon-logout"></i>
+                                    <span>Выйти</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+
+
                     </nav>
                     <!-- nav -->
 
@@ -321,6 +340,4 @@
 
 
 
-
-    </div>
 @endsection

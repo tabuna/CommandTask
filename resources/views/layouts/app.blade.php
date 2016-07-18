@@ -50,9 +50,11 @@
                         </div>
                     </li>
                 @else
-                    <li><a href="#"><i class="icon-compass text-lg"></i></a></li>
+                    <li><a href="{{route('task.list')}}"><i class="icon-compass text-lg"></i></a></li>
 
-                    <li><a href="#"><i class="icon-heart text-lg"></i></a></li>
+
+                    <li><a href="#"><i class="icon-grid text-lg"></i></a></li>
+                    <li><a href="#"><i class="icon-organization text-lg"></i></a></li>
 
                     <li><a href="{{route('account.edit')}}"><i class="icon-user text-lg"></i></a></li>
 

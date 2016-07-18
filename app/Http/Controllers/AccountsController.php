@@ -23,6 +23,17 @@ class AccountsController extends Controller
         $this->user = $guard->user();
     }
 
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getIndex()
+    {
+        return $this->getEdit();
+    }
+
+
+
     /**
      * Редактирвоание профиля
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

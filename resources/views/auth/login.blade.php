@@ -1,9 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+
+
+
+    <div class="container m-t-xxl">
+
+
+        <div class="panel b box-shadow wrapper-lg">
+
+            <div class="row">
+                <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
@@ -61,6 +68,31 @@
                 </div>
             </div>
         </div>
-    </div>
+
+                <div class="col-md-4">
+                    <div class="well well-primary">
+                        <p class="lead">Sign Up now for Free
+                        </p>
+                        <ul class="list-unstyled" style="line-height: 2">
+                            <li><span class="fa fa-check text-success"></span> Create orders</li>
+                            <li><span class="fa fa-check text-success"></span> Pay for services</li>
+                            <li><span class="fa fa-check text-success"></span> Check order status</li>
+                            <li><span class="fa fa-check text-success"></span> Send questions</li>
+                            <li><span class="fa fa-check text-success"></span> Leave reviews</li>
+                        </ul>
+                        <p class="text-center"><a href="/auth/register/" class="btn btn-info">Sign Up</a></p>
+
+                        <p class="text-center"><a target="_blank"
+                                                  href=" /page/public-offer-on-provision-of-translation-and-other-services ">Terms
+                                of use</a>
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
 </div>
+
+    </div>
+    </div>
 @endsection
