@@ -38,9 +38,10 @@ class AccountsController extends Controller
      * Редактирвоание профиля
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function getEdit(){
+    public function getEdit()
+    {
 
-        return view('accounts.edit',[
+        return view('accounts.edit', [
             'user' => $this->user
         ]);
 
@@ -51,15 +52,18 @@ class AccountsController extends Controller
      * Обновление профиля
      * @param AccountEdit $accountEdit
      */
-    public function putUpdate(AccountEdit $accountEdit){
-        /*if ($accountEdit->hasFile('avatar')) {
-            $accountEdit->file('avatar')->move('upload/'.time().'.'.$accountEdit->file('avatar')->getClientOriginalExtension());
-            $this->user->avatar = '/upload/'.time().'.'.$accountEdit->file('avatar')->getClientOriginalExtension();
-        }*/
+    public function putUpdate(AccountEdit $accountEdit)
+    {
+        $avatar = $this->user->avatar;
+        if ($accountEdit->hasFile('avatar')) {
+            $avatar = '/' . $accountEdit->file('avatar')->move('upload/' . date("Ym") . '/', time() . '.' . $accountEdit->file('avatar')->getClientOriginalExtension())->getPathName();
+        }
+
         $this->user
-            ->fill($accountEdit->all())
-            ->save();
-        return redirect()->back()->with('success','Изменения успешно сохранены');
+            ->fill($accountEdit->all());
+        $this->user->avatar = $avatar;
+        $this->user->save();
+        return redirect()->back()->with('success', 'Изменения успешно сохранены');
     }
 
 
@@ -67,8 +71,9 @@ class AccountsController extends Controller
      * Смена пароля пользователя
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function getPassword(){
-        return view('accounts.password',[
+    public function getPassword()
+    {
+        return view('accounts.password', [
             'user' => $this->user
         ]);
     }
@@ -78,16 +83,13 @@ class AccountsController extends Controller
      * @param AccountEdit $accountEdit
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function putPassword(AccountEdit $accountEdit){
+    public function putPassword(AccountEdit $accountEdit)
+    {
         $user = $this->user;
         $user->password = bcrypt($accountEdit->password);
         $user->save();
-        return redirect()->back()->with('success','Вы успешно сменили пароль');
+        return redirect()->back()->with('success', 'Вы успешно сменили пароль');
     }
-
-
-
-
 
 
 }

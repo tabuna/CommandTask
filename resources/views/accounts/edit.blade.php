@@ -229,29 +229,27 @@
     <div class="wrapper-md">
 
 
-        <form class="form-horizontal" action="{{route('account.update')}}" method="POST">
+        <form class="form-horizontal" action="{{route('account.update')}}" method="POST" enctype="multipart/form-data">
 
 
             <div class="fileinput fileinput-exists" data-provides="fileinput">
 
                 <div class="btn-file">
                     <div class="fileinput-preview  thumb-lg pull-left m-r-md">
-                        <img src="http://flatfull.com/themes/angulr/html/img/a0.jpg" alt="..." class="img-circle">
+                        <img src="{{$user->avatar or 'http://flatfull.com/themes/angulr/html/img/a0.jpg' }}" alt="..."
+                             class="img-circle">
                     </div>
 
-                    <input type="file" name="...">
+                    <input type="file" name="avatar">
                 </div>
 
             </div>
 
 
-            <a href="" class="thumb-lg pull-left m-r-md">
-                <img src="http://flatfull.com/themes/angulr/html/img/a0.jpg" class="img-circle">
-            </a>
             <div class="clear m-b">
                 <div class="m-b m-t-sm">
-                    <span class="h3 text-black">John.Smith</span>
-                    <small class="m-l">London, UK</small>
+                    <span class="h3 text-black">{{$user->name}}</span>
+                    <small class="m-l">{{$user->nickname}}</small>
                 </div>
                 <p class="m-b">
                     <a href="" class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a>
