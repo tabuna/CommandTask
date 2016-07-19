@@ -56,6 +56,9 @@ class AccountsController extends Controller
     {
         $avatar = $this->user->avatar;
         if ($accountEdit->hasFile('avatar')) {
+            if(file_exists('.'.$avatar)){
+                unlink('.'.$avatar);
+            }
             $avatar = '/' . $accountEdit->file('avatar')->move('upload/' . date("Ym") . '/', time() . '.' . $accountEdit->file('avatar')->getClientOriginalExtension())->getPathName();
         }
 
