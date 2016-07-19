@@ -9,7 +9,7 @@
         <form class="form-horizontal" action="{{route('account.update')}}" method="POST" enctype="multipart/form-data">
 
 
-            <div class="fileinput fileinput-exists" data-provides="fileinput">
+            <div class="fileinput fileinput-exists thumb-lg pull-left m-r-md" data-provides="fileinput">
 
                 <div class="btn-file">
                     <div class="fileinput-preview  thumb-lg pull-left m-r-md">
