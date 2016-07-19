@@ -9,5 +9,5 @@ class Organization extends Model
     /**
      * @var string
      */
-    protected $table = "Organizations";
+    protected $table = "organizations";
 }

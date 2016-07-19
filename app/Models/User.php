@@ -78,4 +78,15 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Project::class);
     }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function getOrganizations()
+    {
+        return $this->belongsToMany(Organization::class, 'user_organization', 'user_id', 'organization_id');
+    }
+
+
 }

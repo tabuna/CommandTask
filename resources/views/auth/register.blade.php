@@ -9,7 +9,7 @@
 
 
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <div class="panel">
                         <div class="panel-heading">Register</div>
                         <div class="panel-body">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h3 class="dark-grey">Terms and Conditions</h3>
                     <p>
                         By clicking on "Register" you agree to The Company's' Terms and Conditions

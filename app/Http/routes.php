@@ -26,6 +26,11 @@ Route::controller('accounts','AccountsController',[
 ]);
 
 
+Route::controller('organization', 'OrganizationController', [
+    'getIndex' => 'organization.list',
+]);
+
+
 Route::controller('task', 'TaskController', [
     'getIndex' => 'task.list',
 ]);
