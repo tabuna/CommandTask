@@ -12,6 +12,14 @@ class UserObserver
     /**
      * @param $model
      */
+    public function creating($model)
+    {
+        $model->nickname = $model->name;
+    }
+
+    /**
+     * @param $model
+     */
     public function created($model)
     {
         dispatch(new SendWelcomeEmail($model));
