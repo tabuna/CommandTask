@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Image;
+use Storage;
 
 class User extends Authenticatable
 {
@@ -20,7 +22,8 @@ class User extends Authenticatable
         'sex',
         'notification',
         'nickname',
-        'website'
+        'website',
+        'avatar',
     ];
 
 
@@ -44,6 +47,34 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+
+    /**
+     * @param $avatar
+     * @return string
+     */
+    public function getAvatarAttribute($avatar)
+    {
+        return '/image' . $this->attributes['avatar'];
+    }
+
+
+    /**
+     * @param $avatar
+     */
+    public function setAvatarAttribute($avatar)
+    {
+        Storage::disk('public')->makeDirectory(date("Y/m/d"));
+        $name = '/' . date("Y/m/d") . '/' . hash('crc32b', time()) . '.' . $avatar->getClientOriginalExtension();
+        $path = storage_path('app/public/' . $name);
+        Image::make($avatar)->resize(300, 200)->save($path, 75);
+        $this->attributes['avatar'] = $name;
+        if (isset($this->original['avatar']) &&
+            !empty($this->original['avatar'])
+        ) {
+            Storage::disk('public')->delete($this->original['avatar']);
+        }
+    }
 
 
     /**

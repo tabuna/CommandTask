@@ -54,18 +54,9 @@ class AccountsController extends Controller
      */
     public function putUpdate(AccountEdit $accountEdit)
     {
-        $avatar = $this->user->avatar;
-        if ($accountEdit->hasFile('avatar')) {
-            if(file_exists('.'.$avatar)){
-                unlink('.'.$avatar);
-            }
-            $avatar = '/' . $accountEdit->file('avatar')->move('upload/' . date("Ym") . '/', time() . '.' . $accountEdit->file('avatar')->getClientOriginalExtension())->getPathName();
-        }
-
-        $this->user
-            ->fill($accountEdit->all());
-        $this->user->avatar = $avatar;
-        $this->user->save();
+        $user = $this->user;
+        $user->fill($accountEdit->all());
+        $user->save();
         return redirect()->back()->with('success', 'Изменения успешно сохранены');
     }
 

@@ -34,3 +34,6 @@ Route::controller('organization', 'OrganizationController', [
 Route::controller('task', 'TaskController', [
     'getIndex' => 'task.list',
 ]);
+
+
+Route::get('image/{path}', 'ImageController@index')->where('path', '.+');
