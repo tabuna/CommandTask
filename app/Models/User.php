@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Image;
-use Storage;
+use App\Service\ImageUpload\ImageUpload;
 
 class User extends Authenticatable
 {
+    protected $table = 'users';
+
+    use ImageUpload;
     /**
      * The attributes that are mass assignable.
      *
@@ -50,12 +52,11 @@ class User extends Authenticatable
 
 
     /**
-     * @param $avatar
      * @return string
      */
-    public function getAvatarAttribute($avatar)
+    public function getAvatarAttribute()
     {
-        return '/image' . $this->attributes['avatar'];
+        return $this->getImageLoad();
     }
 
 
@@ -64,16 +65,11 @@ class User extends Authenticatable
      */
     public function setAvatarAttribute($avatar)
     {
-        Storage::disk('public')->makeDirectory(date("Y/m/d"));
-        $name = '/' . date("Y/m/d") . '/' . hash('crc32b', time()) . '.' . $avatar->getClientOriginalExtension();
-        $path = storage_path('app/public/' . $name);
-        Image::make($avatar)->resize(300, 200)->save($path, 75);
-        $this->attributes['avatar'] = $name;
-        if (isset($this->original['avatar']) &&
-            !empty($this->original['avatar'])
-        ) {
-            Storage::disk('public')->delete($this->original['avatar']);
-        }
+        return $this->getImageLoad($avatar, [
+            'width' => '128',
+            'height' => '128',
+            'quality' => '75'
+        ]);
     }
 
 
