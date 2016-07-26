@@ -13,7 +13,12 @@ trait ImageUpload
      */
     protected function getImageLoad()
     {
-        return '/image' . $this->attributes['avatar'];
+        if(is_null($this->attributes['avatar'])){
+            return $this->attributes['avatar'];
+        }else{
+            return '/image' . $this->attributes['avatar'];
+        }
+
     }
 
     /**

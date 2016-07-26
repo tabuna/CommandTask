@@ -28,6 +28,8 @@ Route::controller('accounts','AccountsController',[
 
 Route::controller('organization', 'OrganizationController', [
     'getIndex' => 'organization.list',
+    'getCreate' => 'organization.create',
+    'postStore' => 'organization.store',
 ]);
 
 

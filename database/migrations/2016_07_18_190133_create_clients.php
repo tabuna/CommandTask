@@ -16,10 +16,11 @@ class CreateClients extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('name');
-            $table->timestamps();
             $table->string('contact');
             $table->string('email');
             $table->string('phone_number', 20);
+            $table->integer('organization_id');
+            $table->timestamps();
         });
     }
 

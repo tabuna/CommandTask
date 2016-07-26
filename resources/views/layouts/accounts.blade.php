@@ -280,14 +280,14 @@
                                 <span class="text-info">Организация</span>
                             </li>
                             <li>
-                                <a href="/ui/type">
+                                <a href="{{route('organization.list')}}">
                                     <i class="icon-list"></i>
                                     <span>Список</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="/ui/table">
+                                <a href="{{route('organization.create')}}">
                                     <i class="icon-pencil"></i>
                                     <span>Создать</span>
                                 </a>

@@ -20,7 +20,8 @@ class Project extends Model
         'production',
         'stage',
         'dev',
-        'github'
+        'github',
+        'organization_id'
     ];
 
     /**

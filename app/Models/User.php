@@ -65,11 +65,12 @@ class User extends Authenticatable
      */
     public function setAvatarAttribute($avatar)
     {
-        return $this->getImageLoad($avatar, [
+         return $this->setImageLoad($avatar, [
             'width' => '128',
             'height' => '128',
             'quality' => '75'
         ]);
+
     }
 
 
@@ -114,6 +115,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Organization::class, 'user_organization', 'user_id', 'organization_id');
     }
+
+
+
 
 
 }

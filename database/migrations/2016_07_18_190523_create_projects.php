@@ -23,6 +23,7 @@ class CreateProjects extends Migration
             $table->string('stage');
             $table->string('dev');
             $table->string('github');
+            $table->integer('organization_id');
         });
     }
 
