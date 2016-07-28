@@ -117,6 +117,10 @@ class User extends Authenticatable
     }
 
 
+    public function getClient(){
+        return $this->hasMany(Client::class);
+    }
+
 
 
 
