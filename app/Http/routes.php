@@ -33,6 +33,12 @@ Route::controller('organization', 'OrganizationController', [
 ]);
 
 
+Route::controller('client', 'ClientController', [
+    'getIndex' => 'client.list',
+    'getCreate' => 'client.create',
+    'postStore' => 'client.store',
+]);
+
 Route::controller('task', 'TaskController', [
     'getIndex' => 'task.list',
 ]);
