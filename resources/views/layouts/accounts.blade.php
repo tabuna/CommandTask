@@ -280,7 +280,7 @@
                                 <span class="text-info">Организация</span>
                             </li>
                             <li>
-                                <a href="{{route('organization.list')}}">
+                                <a href="{{route('organization.index')}}">
                                     <i class="icon-list"></i>
                                     <span>Список</span>
                                 </a>

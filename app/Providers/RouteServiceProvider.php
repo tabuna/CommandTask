@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Organization;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -27,6 +28,12 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot($router);
+
+
+        $router->bind('organization', function ($value) {
+            return Organization::findOrFail($value);
+        });
+
     }
 
     /**

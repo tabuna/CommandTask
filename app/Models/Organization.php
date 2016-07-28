@@ -24,5 +24,20 @@ class Organization extends Model
     ];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function getUsers()
+    {
+        return $this->belongsToMany(User::class, 'user_organization', 'user_id', 'organization_id');
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany\
+     */
+    public function getClient(){
+        return $this->hasMany(Client::class);
+    }
 
 }

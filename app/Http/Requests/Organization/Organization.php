@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Organizations;
+namespace App\Http\Requests\Organization;
 
 use App\Http\Requests\Request;
 use Illuminate\Contracts\Auth\Guard;
 
-class OrganizationCreate extends Request
+class Organization extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

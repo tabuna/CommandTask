@@ -26,11 +26,9 @@ Route::controller('accounts','AccountsController',[
 ]);
 
 
-Route::controller('organization', 'OrganizationController', [
-    'getIndex' => 'organization.list',
-    'getCreate' => 'organization.create',
-    'postStore' => 'organization.store',
-]);
+Route::resource('organization','Organization\OrganizationController');
+Route::resource('organization.user','Organization\UserController');
+
 
 
 Route::controller('task', 'TaskController', [
