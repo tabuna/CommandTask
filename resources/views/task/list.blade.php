@@ -10,33 +10,22 @@
 
             <div class="hbox hbox-auto-xs hbox-auto-sm">
                 <div class="col w-md b-r">
-                    <div class="wrapper b-b bg">
-                        <button class="btn btn-sm btn-default pull-right visible-sm visible-xs"><i
-                                    class="fa fa-bars"></i></button>
-                        <a class="btn btn-sm btn-danger font-bold"><i class="icon-note m-r-xs"></i> Новая задача</a>
-                    </div>
+
                     <div class="wrapper hidden-sm hidden-xs" id="email-menu">
-                        <ul class="nav nav-pills nav-stacked nav-sm">
-                            <li class="active"><a>Делаю</a></li>
-                            <li><a>Помогаю</a></li>
-                            <li><a>Поручил</a></li>
-                            <li><a>Наблюдаю</a></li>
-                            <li><a>Все</a></li>
-                            <li><a>Завершённые</a></li>
-                        </ul>
+
                         <div class="wrapper small"><i class="icon-tag  m-r-xs"></i> Метки</div>
                         <ul class="nav nav-pills nav-stacked nav-sm">
                             <li>
-                                <a><i class="fa fa-fw fa-circle text-danger"></i>Срочно</a>
+                                <a><i class="icon-folder-alt text-muted m-r-xs"></i>Кипич</a>
                             </li>
                             <li>
-                                <a><i class="fa fa-fw fa-circle text-info"></i>Ознакомиться</a>
+                                <a><i class="icon-folder-alt text-muted m-r-xs"></i>Пилорама</a>
                             </li>
                             <li>
-                                <a><i class="fa fa-fw fa-circle text-success"></i>Выполняется</a>
+                                <a><i class="icon-folder-alt text-muted m-r-xs"></i>Ключи</a>
                             </li>
                             <li>
-                                <a><i class="fa fa-fw fa-circle text-muted"></i>Отложено</a>
+                                <a><i class="icon-folder-alt text-muted m-r-xs"></i>Ещё что то</a>
                             </li>
                         </ul>
                         <div class="wrapper">
@@ -58,9 +47,9 @@
                         <div class="wrapper  b-b">
                             <div class="btn-group pull-right">
                                 <button type="button" class="btn btn-sm btn-bg btn-default"><i
-                                            class="fa fa-chevron-left"></i></button>
+                                            class="icon-arrow-left"></i></button>
                                 <button type="button" class="btn btn-sm btn-bg btn-default"><i
-                                            class="fa fa-chevron-right"></i></button>
+                                            class="icon-arrow-right"></i></button>
                             </div>
                             <div class="btn-toolbar">
                                 <div class="btn-group dropdown">
@@ -70,14 +59,14 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu text-left text-sm">
-                                        <li><a href="#">Просмотренные</a></li>
-                                        <li><a href="#">Избранное</a></li>
+                                        <li><a href="#">Спрос</a></li>
+                                        <li><a href="#">Предложения</a></li>
                                     </ul>
                                 </div>
                                 <div class="btn-group">
                                     <button class="btn btn-sm btn-bg btn-default" data-toggle="tooltip"
                                             data-placement="bottom" data-title="Refresh" data-original-title=""
-                                            title=""><i class="fa fa-refresh"></i></button>
+                                            title=""><i class="icon-refresh"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -86,163 +75,167 @@
                         <!-- list -->
                         <ul class="list-group list-group-lg no-radius m-b-none m-t-n-xxs">
                             <li class="list-group-item clearfix">
-                                <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-                                    <img src="img/a10.jpg">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
                                 </a>
                                 <div class="pull-right text-sm text-muted">
-                                    <span class="hidden-xs ">5 months ago</span>
-                                    <i class="fa fa-paperclip m-l-sm"></i>
+                                    <span class="hidden-xs ">5 минут назад</span>
                                 </div>
                                 <div class="clear">
-                                    <div><a class="text-md " href="#/app/mail/10">Angular is Awesome</a><span
-                                                class="label bg-light m-l-sm ">angular</span></div>
-                                    <div class="text-ellipsis m-t-xs ">Titudin venenatis ipsum ac feugiat. Vestibulum
-                                        ullamcorper Neque quam. Aliquam sollicitudin venenati
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item clearfix">
-                                <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-                                    <img ng-src="img/a9.jpg" src="/dist/img/a9.jpg">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
                                 </a>
                                 <div class="pull-right text-sm text-muted">
-                                    <span class="hidden-xs ">5 months ago</span>
-                                    <i class="fa fa-paperclip ng-hide m-l-sm" ng-show=""></i>
+                                    <span class="hidden-xs ">5 минут назад</span>
                                 </div>
                                 <div class="clear">
-                                    <div><a class="text-md " href="#/app/mail/9">Bootstrap components written in pure
-                                            AngularJS</a><span class="label bg-light m-l-sm ">bootstrap</span></div>
-                                    <div class="text-ellipsis m-t-xs ">Retur adipiscing elit. Morbi id neque quam.
-                                        Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibu
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item clearfix">
-                                <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-                                    <img ng-src="/dist/img/a1.jpg" src="/dist/img/a1.jpg">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
                                 </a>
                                 <div class="pull-right text-sm text-muted">
-                                    <span class="hidden-xs ">5 months ago</span>
-                                    <i class="fa fa-paperclip m-l-sm"></i>
+                                    <span class="hidden-xs ">5 минут назад</span>
                                 </div>
                                 <div class="clear">
-                                    <div><a class="text-md " href="#/app/mail/8">Nesting view in Angular</a><span
-                                                class="label bg-light m-l-sm ">angular</span></div>
-                                    <div class="text-ellipsis m-t-xs ">Neque quam. Aliquam sollicitudin venenatis ipsum
-                                        ac feugiat.
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item clearfix">
-                                <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-                                    <img ng-src="img/a2.jpg" src="img/a2.jpg">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
                                 </a>
                                 <div class="pull-right text-sm text-muted">
-                                    <span class="hidden-xs ">5 months ago</span>
-                                    <i class="fa fa-paperclip ng-hide m-l-sm" ng-show=""></i>
+                                    <span class="hidden-xs ">5 минут назад</span>
                                 </div>
                                 <div class="clear">
-                                    <div><a class="text-md " href="#/app/mail/7">Lazy loading Angular controllers,
-                                            directives and services</a><span
-                                                class="label bg-light m-l-sm ">angular</span></div>
-                                    <div class="text-ellipsis m-t-xs ">Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Morbi id neque quam. Aliquam sollicitudin v
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item clearfix">
-                                <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-                                    <img ng-src="img/a3.jpg" src="img/a3.jpg">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
                                 </a>
                                 <div class="pull-right text-sm text-muted">
-                                    <span class="hidden-xs ">5 months ago</span>
-                                    <i class="fa fa-paperclip ng-hide m-l-sm" ng-show=""></i>
+                                    <span class="hidden-xs ">5 минут назад</span>
                                 </div>
                                 <div class="clear">
-                                    <div><a class="text-md " href="#/app/mail/6">What a hot day</a><span
-                                                class="label bg-light m-l-sm ">client</span></div>
-                                    <div class="text-ellipsis m-t-xs ">Duis non malesuada est, quis congue nibh.
-                                        Pellentesque habitant morbi tristique senectus et netus et
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item clearfix">
-                                <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-                                    <img ng-src="img/a4.jpg" src="img/a4.jpg">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
                                 </a>
                                 <div class="pull-right text-sm text-muted">
-                                    <span class="hidden-xs ">5 months ago</span>
-                                    <i class="fa fa-paperclip ng-hide m-l-sm" ng-show=""></i>
+                                    <span class="hidden-xs ">5 минут назад</span>
                                 </div>
                                 <div class="clear">
-                                    <div><a class="text-md " href="#/app/mail/5">Oho!</a><span
-                                                class="label bg-light m-l-sm "></span></div>
-                                    <div class="text-ellipsis m-t-xs ">Turpis egestas lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit.
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item clearfix">
-                                <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-                                    <img ng-src="img/a5.jpg" src="img/a5.jpg">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
                                 </a>
                                 <div class="pull-right text-sm text-muted">
-                                    <span class="hidden-xs ">5 months ago</span>
-                                    <i class="fa fa-paperclip ng-hide m-l-sm" ng-show=""></i>
+                                    <span class="hidden-xs ">5 минут назад</span>
                                 </div>
                                 <div class="clear">
-                                    <div><a class="text-md " href="#/app/mail/4">Meeting</a><span
-                                                class="label bg-light m-l-sm ">work</span></div>
-                                    <div class="text-ellipsis m-t-xs ">Fames ac turpis egestas. Lorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit. Morbi id neque qua
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item clearfix">
-                                <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-                                    <img ng-src="img/a6.jpg" src="img/a6.jpg">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
                                 </a>
                                 <div class="pull-right text-sm text-muted">
-                                    <span class="hidden-xs ">5 months ago</span>
-                                    <i class="fa fa-paperclip ng-hide m-l-sm" ng-show=""></i>
+                                    <span class="hidden-xs ">5 минут назад</span>
                                 </div>
                                 <div class="clear">
-                                    <div><a class="text-md " href="#/app/mail/3">Product version released</a><span
-                                                class="label bg-light m-l-sm "></span></div>
-                                    <div class="text-ellipsis m-t-xs ">Consectetur adipiscing elit. Morbi id neque quam.
-                                        Aliquam sollicitudin venenatis ipsum ac feugiat. V
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item clearfix">
-                                <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-                                    <img ng-src="img/a7.jpg" src="img/a7.jpg">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
                                 </a>
                                 <div class="pull-right text-sm text-muted">
-                                    <span class="hidden-xs ">5 months ago</span>
-                                    <i class="fa fa-paperclip ng-hide m-l-sm" ng-show=""></i>
+                                    <span class="hidden-xs ">5 минут назад</span>
                                 </div>
                                 <div class="clear">
-                                    <div><a class="text-md " href="#/app/mail/2">Hi, What's up</a><span
-                                                class="label bg-light m-l-sm "></span></div>
-                                    <div class="text-ellipsis m-t-xs ">Morbi id neque quam. Aliquam sollicitudin
-                                        venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item clearfix">
-                                <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-                                    <img ng-src="img/a8.jpg" src="img/a8.jpg">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
                                 </a>
                                 <div class="pull-right text-sm text-muted">
-                                    <span class="hidden-xs ">6 months ago</span>
-                                    <i class="fa fa-paperclip ng-hide m-l-sm" ng-show=""></i>
+                                    <span class="hidden-xs ">5 минут назад</span>
                                 </div>
                                 <div class="clear">
-                                    <div><a class="text-md " href="#/app/mail/1">Kick-off meeting at 5:00 pm</a><span
-                                                class="label bg-light m-l-sm ">work</span></div>
-                                    <div class="text-ellipsis m-t-xs ">Morbi id neque quam. Aliquam sollicitudin
-                                        venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item clearfix">
+                                <a class="avatar thumb pull-left m-r" href="#">
+                                    <img src="/compony-1.jpg">
+                                </a>
+                                <div class="pull-right text-sm text-muted">
+                                    <span class="hidden-xs ">5 минут назад</span>
+                                </div>
+                                <div class="clear">
+                                    <div><a class="text-md" href="#">ООО Рога и копыта</a><span
+                                                class="label bg-light m-l-sm ">Тег который подошёл</span></div>
+                                    <div class="text-ellipsis m-t-xs ">
+                                        Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач.
                                     </div>
                                 </div>
                             </li>

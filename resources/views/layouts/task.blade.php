@@ -5,14 +5,14 @@
 
 
     <div id="content" class="container" role="main">
-        <div class="panel b box-shadow m-t-xxl">
+        <div class="panel b box-shadow-lg m-t-xxl">
 
 
             <div class="hbox hbox-auto-xs hbox-auto-sm">
                 <div class="col w-md b-r">
                     <div class="wrapper b-b bg">
                         <button class="btn btn-sm btn-default pull-right visible-sm visible-xs"><i
-                                    class="fa fa-bars"></i></button>
+                                    class="icon-menu"></i></button>
                         <a class="btn btn-sm btn-danger w-xs font-bold">Compose</a>
                     </div>
                     <div class="wrapper hidden-sm hidden-xs" id="email-menu">

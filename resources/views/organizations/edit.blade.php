@@ -1,6 +1,6 @@
-@extends('layouts.accounts')
+@extends('layouts.organizations')
 
-@section('accounts')
+@section('organization')
 
 
     <div class="wrapper-md">
@@ -14,7 +14,7 @@
 
                 <div class="btn-file">
                     <div class="fileinput-preview  thumb-lg pull-left m-r-md">
-                        <img src="{{$user->avatar or '/dist/img/a0.jpg' }}" alt="..."
+                        <img src="{{$user->avatar or '/company-logo.jpg' }}" alt="..."
                              class="img-circle">
                     </div>
 
@@ -26,8 +26,8 @@
 
             <div class="clear m-b">
                 <div class="m-b m-t-sm">
-                    <span class="h3 text-black">{{$user->name}}</span>
-                    <small class="m-l block">{{$user->nickname}}</small>
+                    <span class="h3 text-black">ООО Рога и Копыта</span>
+                    <small class="m-l block">Винтики и шпунтики</small>
                 </div>
             </div>
             </div>
@@ -51,9 +51,29 @@
 
 
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                <label class="col-sm-2 control-label">Имя</label>
+                <label class="col-sm-2 control-label">Название организации</label>
                 <div class="col-sm-10">
-                    <input type="text" name="name" class="form-control" value="{{$user->name}}" placeholder="Name">
+                    <input type="text" name="name" class="form-control" value="" placeholder="ООО Рога и Копыта">
+                </div>
+            </div>
+
+            <div class="line line-dashed b-b line-lg"></div>
+
+            <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
+                <label class="col-sm-2 control-label">Физический адрес</label>
+                <div class="col-sm-10">
+                    <input type="text" name="website" class="form-control" value=""
+                           placeholder="г. Липецк Ул. Зои Космеденьянской д 11">
+                </div>
+            </div>
+
+            <div class="line line-dashed b-b line-lg"></div>
+
+            <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
+                <label class="col-sm-2 control-label">Юридический адрес</label>
+                <div class="col-sm-10">
+                    <input type="text" name="website" class="form-control" value=""
+                           placeholder="г. Липецк Ул. Зои Космеденьянской д 11">
                 </div>
             </div>
 
@@ -62,87 +82,53 @@
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                 <label class="col-sm-2 control-label">Электронная почта</label>
                 <div class="col-sm-10">
-                    <input type="email" name="email" class="form-control" value="{{$user->email}}" placeholder="Email">
+                    <input type="email" name="email" class="form-control" value="" placeholder="Email">
                 </div>
             </div>
 
             <div class="line line-dashed b-b line-lg"></div>
 
             <div class="form-group{{ $errors->has('nickname') ? ' has-error' : '' }}">
-                <label class="col-sm-2 control-label">Псевдоним</label>
+                <label class="col-sm-2 control-label">ИНН</label>
                 <div class="col-sm-10">
-                    <input type="text" name="nickname" class="form-control" value="{{$user->nickname}}"
-                           placeholder="NickName">
+                    <input type="text" name="nickname" class="form-control" value=""
+                           placeholder="5476587686787">
                 </div>
             </div>
 
             <div class="line line-dashed b-b line-lg"></div>
 
             <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
-                <label class="col-sm-2 control-label">Веб-сайи</label>
+                <label class="col-sm-2 control-label">Веб-сайт</label>
                 <div class="col-sm-10">
-                    <input type="url" name="website" class="form-control" value="{{$user->website}}"
-                           placeholder="Web Site">
+                    <input type="url" name="website" class="form-control" value=""
+                           placeholder="http://google.com">
                 </div>
             </div>
 
             <div class="line line-dashed b-b line-lg"></div>
 
-
             <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                 <label class="col-sm-2 control-label">Телефон</label>
                 <div class="col-sm-10">
-                    <input type="tel" name="phone" class="form-control" value="{{$user->phone}}" placeholder="Phone">
+                    <input type="tel" name="phone" class="form-control" value="" placeholder="+7 (4742) 55-25-52">
                 </div>
             </div>
 
             <div class="line line-dashed b-b line-lg"></div>
 
             <div class="form-group{{ $errors->has('about') ? ' has-error' : '' }}">
-                <label class="col-sm-2 control-label">Обомне</label>
+                <label class="col-sm-2 control-label">Информация компании</label>
                 <div class="col-sm-10">
                     <textarea class="form-control no-resize" rows="6" name="about"
-                              placeholder="About">{{$user->about}}</textarea>
+                              placeholder="About"></textarea>
                 </div>
             </div>
+
 
             <div class="line line-dashed b-b line-lg"></div>
 
-            <div class="form-group{{ $errors->has('sex') ? ' has-error' : '' }}">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <label class="i-checks i-checks-sm">
-                        <input type="radio" name="sex" value="1" @if($user->sex) checked @endif>
-                        <i></i>
-                        Мужчина
-                    </label>
 
-                    <label class="i-checks i-checks-sm">
-                        <input type="radio" name="sex" value="0" @if(!$user->sex) checked @endif>
-                        <i></i>
-                        Женщина
-                    </label>
-
-                </div>
-            </div>
-
-            <div class="line line-dashed b-b line-lg"></div>
-
-            <div class="form-group{{ $errors->has('notification') ? ' has-error' : '' }}">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <label class="i-checks i-checks-sm">
-                        <input type="radio" name="notification" value="1" @if($user->notification) checked @endif>
-                        <i></i>
-                        Подписаться на уведомления
-                    </label>
-
-                    <label class="i-checks i-checks-sm">
-                        <input type="radio" name="notification" value="0" @if(!$user->notification) checked @endif>
-                        <i></i>
-                        Не присылать уведомления
-                    </label>
-
-                </div>
-            </div>
 
 
             {!! csrf_field() !!}

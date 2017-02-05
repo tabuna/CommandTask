@@ -11,19 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
 Route::controller('accounts','AccountsController',[
         'getEdit' => 'account.edit',
         'getPassword' => 'account.password',
         'putUpdate' => 'account.update',
         'putPassword' => 'account.update.password',
 ]);
+
+
+Route::get('/chat', function (){
+    return view('chat.main');
+});
+
+Route::get('/organizations', function (){
+    return view('organizations.index');
+});
+
+Route::get('/organizations/edit', function (){
+    return view('organizations.edit');
+});
+
 
 
 Route::resource('organization','Organization\OrganizationController');

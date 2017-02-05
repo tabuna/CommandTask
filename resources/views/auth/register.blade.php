@@ -2,25 +2,42 @@
 
 @section('content')
 
+
     <div class="container m-t-xxl">
 
 
-        <div class="panel b box-shadow wrapper-lg">
+        <div class="panel b box-shadow-lg wrapper-lg">
 
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="panel">
-                        <div class="panel-heading">Register</div>
+                        <div class="panel-heading">Регистрация</div>
                         <div class="panel-body">
+
+
+                            <div class="stepwizard">
+                                <div class="stepwizard-row setup-panel">
+                                    <div class="stepwizard-step">
+                                        <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                                        <p>Пользователь</p>
+                                    </div>
+                                    <div class="stepwizard-step">
+                                        <a href="#step-2" type="button" class="btn btn-default btn-circle"
+                                           disabled="disabled">2</a>
+                                        <p>Компания</p>
+                                    </div>
+                                </div>
+                            </div>
+
                             <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
-                                {{ csrf_field() }}
+                                <div class="row setup-content" id="step-1">
 
-                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                    <label for="name" class="col-md-4 control-label">Name</label>
+                                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                        <label for="name" class="control-label">Ваше имя</label>
 
-                                    <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control" name="name"
+
+                                        <input id="name" type="text" class="form-control" required name="name" placeholder="Шелдон Купер"
                                                value="{{ old('name') }}">
 
                                         @if ($errors->has('name'))
@@ -28,14 +45,14 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                         @endif
+
                                     </div>
-                                </div>
 
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                        <label for="email" class="control-label">E-Mail Address</label>
 
-                                    <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" name="email"
+
+                                        <input id="email" type="email" class="form-control" required name="email" placeholder="sheldon@kuper.biz"
                                                value="{{ old('email') }}">
 
                                         @if ($errors->has('email'))
@@ -44,13 +61,12 @@
                                     </span>
                                         @endif
                                     </div>
-                                </div>
 
-                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <label for="password" class="col-md-4 control-label">Password</label>
+                                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                        <label for="password" class="control-label">Пароль</label>
 
-                                    <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control" name="password">
+
+                                        <input id="password" type="password" class="form-control" required name="password" placeholder="Сложная кодовая фраза">
 
                                         @if ($errors->has('password'))
                                             <span class="help-block">
@@ -58,56 +74,65 @@
                                     </span>
                                         @endif
                                     </div>
-                                </div>
 
-                                <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                    <label for="password-confirm" class="col-md-4 control-label">Confirm
-                                        Password</label>
+                                    <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                                        <label for="password-confirm" class="control-label">Повторите пароль
+                                        </label>
 
-                                    <div class="col-md-6">
-                                        <input id="password-confirm" type="password" class="form-control"
-                                               name="password_confirmation">
 
-                                        @if ($errors->has('password_confirmation'))
-                                            <span class="help-block">
+                                            <input id="password-confirm" type="password" required class="form-control"
+                                                   name="password_confirmation">
+
+                                            @if ($errors->has('password_confirmation'))
+                                                <span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
-                                        @endif
+                                            @endif
                                     </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="fa fa-btn fa-user"></i> Register
-                                        </button>
+                                    <button class="btn btn-info nextBtn pull-right" type="button">Далее</button>
+                                </div>
+                                <div class="row setup-content" id="step-2">
+                                    <div class="form-group">
+                                        <label class="control-label">Название компании</label>
+                                        <input maxlength="200" type="text" required="required" class="form-control"
+                                               placeholder="ООО Рога и копыта"/>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Адрес компании</label>
+                                        <input maxlength="200" type="text" required="required" class="form-control"
+                                               placeholder="Москва Кремль 1"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Номер телефона</label>
+                                        <input maxlength="200" type="text"  required="required" class="form-control"
+                                               placeholder="+7 (4742)-48-55-55"/>
+                                    </div>
+                                    <button class="btn btn-info pull-right" type="submit">Создать</button>
                                 </div>
                             </form>
+
+
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <h3 class="dark-grey">Terms and Conditions</h3>
+                <div class="col-md-4 b-l b-light text-justify
+">
+                    <h3 class="dark-grey">Правила и условия</h3>
                     <p>
-                        By clicking on "Register" you agree to The Company's' Terms and Conditions
+                        Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечен
+
+
                     </p>
                     <p>
-                        While rare, prices are subject to change based on exchange rate fluctuations -
-                        should such a fluctuation happen, we may request an additional payment. You have the option to
-                        request a full refund or to pay the new price. (Paragraph 13.5.8)
+                        Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения существенных финансовых и административных условий.
                     </p>
                     <p>
-                        Should there be an error in the description or pricing of a product, we will provide you with a
-                        full refund (Paragraph 13.5.6)
-                    </p>
-                    <p>
-                        Acceptance of an order by us is dependent on our suppliers ability to provide the product.
-                        (Paragraph 13.5.6)
+                        Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения существенных финансовых и административных условий.
                     </p>
 
-                    <button type="submit" class="btn btn-link">Register</button>
+
                 </div>
 
             </div>
@@ -116,4 +141,53 @@
 
     </div>
     </div>
+
+
+    <script>
+        window.onload = function () {
+            $(document).ready(function () {
+                var navListItems = $('div.setup-panel div a'),
+                    allWells = $('.setup-content'),
+                    allNextBtn = $('.nextBtn');
+
+                allWells.hide();
+
+                navListItems.click(function (e) {
+                    e.preventDefault();
+                    var $target = $($(this).attr('href')),
+                        $item = $(this);
+
+                    if (!$item.hasClass('disabled')) {
+                        navListItems.removeClass('btn-primary').addClass('btn-default');
+                        $item.addClass('btn-primary');
+                        allWells.hide();
+                        $target.show();
+                        $target.find('input:eq(0)').focus();
+                    }
+                });
+
+                allNextBtn.click(function () {
+                    var curStep = $(this).closest(".setup-content"),
+                        curStepBtn = curStep.attr("id"),
+                        nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                        curInputs = curStep.find("input[type='text'],input[type='url']"),
+                        isValid = true;
+
+                    $(".form-group").removeClass("has-error");
+                    for (var i = 0; i < curInputs.length; i++) {
+                        if (!curInputs[i].validity.valid) {
+                            isValid = false;
+                            $(curInputs[i]).closest(".form-group").addClass("has-error");
+                        }
+                    }
+
+                    if (isValid)
+                        nextStepWizard.removeAttr('disabled').trigger('click');
+                });
+
+                $('div.setup-panel div a.btn-primary').trigger('click');
+            });
+        }
+    </script>
+
 @endsection
